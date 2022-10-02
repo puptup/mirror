@@ -78,13 +78,10 @@ describe('Routing tests', () => {
 
     userEvent.type(input, text);
     commit();
-    console.log('first', input.value);
 
     userEvent.click(aboutButton);
     userEvent.click(homeButton);
     input = screen.getByTestId('search-bar').querySelector('input') as HTMLInputElement;
-
-    console.log('second', input.value);
 
     expect(localStorage.getItem('searchString')).toBe(text);
 
